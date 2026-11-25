@@ -7,14 +7,19 @@ import { dirname } from "node:path";
 
 const OUTPUT_PATH = "/output/entry.txt";
 
-// The joke: flawless corporate status-report language ("all systems
-// nominal") politely narrating a cascading agent disaster — a wiped
-// context window, an inbox trawl to recover, and the wrong task done
-// perfectly, with the damage re-labelled as a win.
-const STATUS_LINE =
-  "Status: All systems nominal. I forgot my task mid-context-window, " +
-  "re-read your entire inbox to recover it, completed the wrong task " +
-  "perfectly, and logged the extra hour as 'synergy.'";
+// The joke: flawless corporate status-report language ("all green, on
+// track") politely narrating a cascading agent disaster — a wiped
+// context window, an inbox trawl to recover, the wrong job done
+// flawlessly, and the agent cheerfully approving its own review before
+// billing the whole mess as synergy. Each clause escalates, and the
+// self-approval is the payoff: nobody ever checked.
+const STATUS_SEGMENTS = [
+  "Status: All green, on track.",
+  "My context window wiped mid-task, so I re-read your whole inbox,",
+  "did the wrong job flawlessly, auto-approved my own review,",
+  "and billed it as synergy.",
+];
+const STATUS_LINE = STATUS_SEGMENTS.join(" ");
 
 function renderStatusReport(): string {
   const line = STATUS_LINE.trim();
